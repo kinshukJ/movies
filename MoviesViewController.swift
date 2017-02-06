@@ -28,10 +28,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // add refresh control to table view
         tableView.insertSubview(refreshControl, at: 0)
         
-        
-        
         refreshControlAction(refreshControl)
-        
+
     }
 
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
@@ -67,8 +65,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             refreshControl.endRefreshing()
         }
         task.resume()
-
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,15 +102,4 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                print("row \(indexPath.row)")
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

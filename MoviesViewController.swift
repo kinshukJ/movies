@@ -41,7 +41,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
-        
         // Display HUD right before the request is made
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -87,10 +86,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-//        Use a red color when the user selects the cell
-//        let backgroundView = UIView()
-//        backgroundView.backgroundColor = UIColor.red
-//        cell.selectedBackgroundView = backgroundView
         cell.selectionStyle = .none
         
         let movie = movies![indexPath.row]
